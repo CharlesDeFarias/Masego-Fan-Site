@@ -37,7 +37,7 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
 app.use(session({
-    secret: 'rcbootcamp2019a', // session secret
+    secret: 'bigoldsecret', // session secret
     resave: true,
     saveUninitialized: true
 }));
@@ -47,7 +47,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 // routes ======================================================================
-//require('./app/routes.js')(app, passport, db); // load our routes and pass in our app and fully configured passport
+require('./app/routes.js')(app, passport, db); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
 app.listen(port);
